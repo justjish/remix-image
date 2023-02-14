@@ -15,7 +15,15 @@
     "url": "https://github.com/Josh-McFarlin/remix-image/issues"
   },
   "main": "build/index.js",
+  "module": "build/index.mjs",
   "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/index.mjs",
+      "require": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  },
   "files": [
     "build",
     "package.json",

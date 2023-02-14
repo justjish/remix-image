@@ -9,6 +9,7 @@ import terser from "@rollup/plugin-terser";
 import replace from "@rollup/plugin-replace";
 import { version } from "./package.json";
 
+/** @type {import('rollup').RollupOptions} */
 export default [
   {
     input: "src/index.ts",
@@ -16,6 +17,13 @@ export default [
       {
         file: "build/index.js",
         format: "cjs",
+        sourcemap: true,
+        exports: "named",
+        inlineDynamicImports: true,
+      },
+      {
+        file: "build/index.mjs",
+        format: "es",
         sourcemap: true,
         exports: "named",
         inlineDynamicImports: true,
